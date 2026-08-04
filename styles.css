@@ -1374,3 +1374,9 @@ body{color:var(--ink);background:radial-gradient(circle at 12% 3%,rgba(109,40,21
 .game-overlay .game-board,.game-overlay .game-header{color:#201a22;background:rgba(255,250,244,.94)}
 .game-overlay .game-guide .guide-copy{color:#201a22;background:rgba(255,255,255,.84)}
 .game-header-actions{display:flex;justify-self:end;gap:8px}
+
+/* Navigation occupies its own row and never covers the hero artwork. */
+.site-header{position:relative;top:0}
+.reference-hero{min-height:642px;padding-top:0}
+.reference-hero::before,.reference-hero::after{inset:0}
+@media(max-width:680px){.reference-hero{min-height:692px;padding-top:0}.reference-hero::before,.reference-hero::after{inset-block-start:0}}

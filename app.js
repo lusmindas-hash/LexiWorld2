@@ -503,8 +503,9 @@
         if(r.type==="choice"){
           r.items.forEach((it,i)=>{
             const x=lanes[i]-78,y=r.y,w=156,h=58;
-            ctx.fillStyle=it.correct?"rgba(255,180,72,.93)":"rgba(255,255,255,.92)";
-            ctx.shadowColor="rgba(0,0,0,.25)";ctx.shadowBlur=14;ctx.beginPath();ctx.roundRect(x,y,w,h,14);ctx.fill();ctx.shadowBlur=0;
+            // Every answer uses the same neutral card style; correctness is revealed only after selection.
+            ctx.fillStyle="rgba(245,240,255,.94)";
+            ctx.shadowColor="rgba(36,16,64,.32)";ctx.shadowBlur=14;ctx.beginPath();ctx.roundRect(x,y,w,h,14);ctx.fill();ctx.shadowBlur=0;
             ctx.fillStyle="#231c25";ctx.font=`900 ${it.word.length>10?16:19}px system-ui`;ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(it.word,lanes[i],y+h/2);
           });
         }else if(r.type==="obstacle"){
@@ -526,7 +527,7 @@
     }
     function update(dt,now){
       const focusMultiplier=now<slowUntil?0.46:1;
-      const speed=(220+missionIndex*28)*focusMultiplier;
+      const speed=(165+missionIndex*20)*focusMultiplier;
       rows.forEach(r=>r.y+=speed*dt);
       rows.forEach(r=>{
         if(r.resolved)return;
