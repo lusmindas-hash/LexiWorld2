@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LexiWorld: The Glitch Attack — three connected English-learning game missions for A1–A2 players.">
+  <meta name="theme-color" content="#171317">
+  <title>LexiWorld: The Glitch Attack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="intro-open">
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="page-orb orb-a" aria-hidden="true"></div>
+  <div class="page-orb orb-b" aria-hidden="true"></div>
+
+  <section id="briefing" class="briefing video-briefing" aria-label="LexiWorld intro video">
+    <div class="intro-stage">
+      <video id="intro-video" class="intro-video" preload="metadata" playsinline poster="assets/cover/lexiworld-cover.png">
+        <source src="assets/video/lexiworld-intro.mp4" type="video/mp4">
+      </video>
+      <div class="intro-shade" aria-hidden="true"></div>
+      <div class="intro-topbar">
+        <a class="intro-brand" href="#home" aria-label="LexiWorld home">
+          <span class="brand-mark">L</span>
+          <span><strong>LexiWorld</strong><small>The Glitch Attack</small></span>
+        </a>
+        <button id="skip-briefing" class="button glass compact" type="button">Skip intro</button>
+      </div>
+      <div class="intro-launch">
+        <div class="eyebrow light">15-second mission briefing</div>
+        <h1>LexiWorld needs a player.</h1>
+        <p>Watch the opening with sound, then choose your first mission.</p>
+        <div class="briefing-actions">
+          <button id="intro-play" class="button primary fx-button" type="button">▶ Play intro</button>
+          <button id="enter-world" class="button glass" type="button">Enter now</button>
+        </div>
+      </div>
+      <div class="intro-progress" aria-hidden="true"><span id="intro-progress-bar"></span></div>
+    </div>
+  </section>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="LexiWorld home">
+      <span class="brand-word">LexiWorld</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#missions"><span>🎮</span> Games</a>
+      <a href="#team"><span>👥</span> Heroes</a>
+      <a href="#progress"><span>🏆</span> Progress</a>
+      <a href="#rewards"><span>★</span> Rewards</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero shell reference-hero">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h2 class="glitch-heading" data-text="Play. Solve. Listen.">
+          <span class="title-line cyan">Play.</span>
+          <span class="title-line gold">Solve.</span>
+          <span class="title-line pink">Listen.</span>
+        </h2>
+        <p>Fun and educational games<br>for kids and families.</p>
+        <div class="hero-actions">
+          <a class="button primary fx-button" href="#missions"><span class="play-icon">🎮</span> Play now</a>
+        </div>
+        <div class="hero-status-card visually-hidden" id="adventure-status" aria-live="polite">
+          <span class="status-pill">Adventure status</span>
+          <strong id="adventure-status-title">Ready for your first mission</strong>
+          <p id="adventure-status-copy">Choose a mission and begin the rescue.</p>
+        </div>
+        <div class="hero-features visually-hidden">
+          <span>⚡ Fast play</span>
+          <span>🌀 Boss battles</span>
+          <span>🔦 Clues</span>
+          <span>🎧 Audio</span>
+        </div>
+        <div class="live-status visually-hidden" aria-label="Live game systems">
+          <span class="status-dot"></span>
+          <strong>LIVE SYSTEMS:</strong>
+          <span id="live-status-text">Portals online · Audio ready · Glitch detected</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="LexiWorld heroes"></div>
+      <div class="hero-feature-bar">
+        <div><b class="feature-icon cyan">🎮</b><span><strong>Exciting games</strong><small>Fun adventures<br>for all ages</small></span></div>
+        <div><b class="feature-icon pink">🧩</b><span><strong>Brain boosters</strong><small>Solve puzzles and<br>challenge your mind</small></span></div>
+        <div><b class="feature-icon cyan">🎧</b><span><strong>Listen &amp; learn</strong><small>Stories, music and<br>interactive audio</small></span></div>
+        <div><b class="feature-icon gold">👥</b><span><strong>Safe community</strong><small>Play, chat and make<br>new friends</small></span></div>
+      </div>
+    </section>
+
+    <section id="missions" class="section shell">
+      <div class="section-heading">
+        <div><div class="eyebrow">Mission map</div><h2>Choose your mission</h2></div>
+        <p>Three different genres, one story: build sentences at speed, investigate a mystery, and decode audio signals.</p>
+      </div>
+
+      <div class="mission-grid">
+        <article class="mission-card sprint-card" data-tilt data-mission="sprint">
+          <div class="mission-art">
+            <div class="speed-lines"></div>
+            <img class="card-character back" src="assets/characters/bear.webp" alt="Bruno Bear">
+            <img class="card-character front" src="assets/characters/fox.webp" alt="Max Fox">
+            <span class="game-logo">🏁</span>
+          </div>
+          <div class="mission-content">
+            <div class="mission-meta"><span>Grammar action runner</span><span>A1–A2</span></div>
+            <h3>Syntax Surfer</h3>
+            <p>Build short sentences at full speed. Switch lanes, dodge traps, and charge Focus Mode.</p>
+            <div class="feature-pills"><span>present continuous</span><span>have got</span><span>can</span></div>
+            <div class="card-actions"><button class="button primary fx-button" data-play="sprint" type="button">Play</button><button class="button text-button" data-instructions="sprint" type="button">How to play</button></div>
+          </div>
+        </article>
+
+        <article class="mission-card detective-card" data-tilt data-mission="detective">
+          <div class="mission-art">
+            <div class="case-lines"></div>
+            <img class="card-character back" src="assets/characters/panda.webp" alt="Panda Pete">
+            <img class="card-character front" src="assets/characters/wolf.webp" alt="Agent Wolf">
+            <span class="game-logo">🔦</span>
+          </div>
+          <div class="mission-content">
+            <div class="mission-meta"><span>Detective escape room</span><span>A1–A2</span></div>
+            <h3>The Lost Timeline</h3>
+            <p>Scan three locations, collect clues, unlock the Grammar Decoder, and solve the case.</p>
+            <div class="feature-pills"><span>to be</span><span>there are</span><span>past of be</span></div>
+            <div class="card-actions"><button class="button primary fx-button" data-play="detective" type="button">Play</button><button class="button text-button" data-instructions="detective" type="button">How to play</button></div>
+          </div>
+        </article>
+
+        <article class="mission-card safari-card" data-tilt data-mission="safari">
+          <div class="mission-art">
+            <div class="sonar-rings"></div>
+            <img class="card-character back" src="assets/characters/cat.webp" alt="Luna Cat">
+            <img class="card-character front" src="assets/characters/lion.webp" alt="Leo Lion">
+            <span class="game-logo">🎧</span>
+          </div>
+          <div class="mission-content">
+            <div class="mission-meta"><span>Listening challenge</span><span>A1–A2</span></div>
+            <h3>Sound Safari</h3>
+            <p>Listen for heroes, objects, and places. Lock the signal before the timer runs out.</p>
+            <div class="feature-pills"><span>clothes</span><span>places</span><span>first / then</span></div>
+            <div class="card-actions"><button class="button primary fx-button" data-play="safari" type="button">Play</button><button class="button text-button" data-instructions="safari" type="button">How to play</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="team" class="section shell">
+      <div class="section-heading"><div><div class="eyebrow">Playable cast</div><h2>Meet the Glitch Squad</h2></div><p>Every hero has a job: lead the case, repair the systems, race through the city, or guide the audio mission.</p></div>
+      <div class="team-grid">
+        <article><img src="assets/characters/wolf.webp" alt="Agent Wolf"><div><h3>Agent Wolf</h3><p>Detective and mission leader.</p></div></article>
+        <article><img src="assets/characters/fox.webp" alt="Max Fox"><div><h3>Max Fox</h3><p>The fastest rider in LexiWorld.</p></div></article>
+        <article><img src="assets/characters/bear.webp" alt="Bruno Bear"><div><h3>Bruno Bear</h3><p>Sentence Engine mechanic.</p></div></article>
+        <article><img src="assets/characters/lion.webp" alt="Leo Lion"><div><h3>Leo Lion</h3><p>Echo Challenge guide.</p></div></article>
+        <article><img src="assets/characters/panda.webp" alt="Panda Pete"><div><h3>Panda Pete</h3><p>Owner of the missing skateboard.</p></div></article>
+        <article><img src="assets/characters/bunny.webp" alt="Bella Bunny"><div><h3>Bella Bunny</h3><p>Witness and detail expert.</p></div></article>
+        <article><img src="assets/characters/raccoon.webp" alt="Ricky Raccoon"><div><h3>Ricky Raccoon</h3><p>Tracker and false suspect.</p></div></article>
+        <article><img src="assets/characters/cat.webp" alt="Luna Cat"><div><h3>Luna Cat</h3><p>Dancer and sound target.</p></div></article>
+      </div>
+    </section>
+
+    <section id="progress" class="section shell">
+      <div class="progress-panel">
+        <div class="progress-copy"><div class="eyebrow light">Language Core</div><h2>Restore all three systems</h2><p id="progress-message">Complete the missions and stop The Glitch.</p><button id="reset-progress" class="button text-button light-button" type="button">Reset progress</button></div>
+        <div class="core-grid">
+          <div class="core-module" data-crystal="sprint"><span>🏁</span><strong>Sentence Engine</strong><small>offline</small></div>
+          <div class="core-module" data-crystal="detective"><span>🔦</span><strong>Time Archive</strong><small>offline</small></div>
+          <div class="core-module" data-crystal="safari"><span>🎧</span><strong>Echo Map</strong><small>offline</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="rewards">
+      <div class="section-heading">
+        <div><div class="eyebrow">Premium rewards</div><h2>Unlock the deluxe path</h2></div>
+        <p>Every star opens a new layer of polish so the campaign feels more like a premium release.</p>
+      </div>
+      <div class="reward-grid">
+        <article class="reward-card reward-card-featured">
+          <div class="reward-badge">Campaign unlocks</div>
+          <h3 id="reward-title">Premium rewards are waiting</h3>
+          <p id="reward-copy">Collect more stars to unlock glowing effects and a richer finish for the campaign.</p>
+          <div id="reward-list" class="reward-list"></div>
+        </article>
+        <article class="reward-card">
+          <div class="reward-badge">Deluxe pacing</div>
+          <h3>What feels premium</h3>
+          <ul class="reward-checks">
+            <li>Mission launch scenes and dramatic boss beats.</li>
+            <li>Combo feedback and cinematic flash moments.</li>
+            <li>Reward-driven progression with visible unlocks.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><div><strong>LexiWorld</strong><span>The Glitch Attack</span></div><span>Three games. One connected adventure.</span></footer>
+
+  <dialog id="info-dialog" class="modal"><button class="modal-close" data-close-dialog type="button" aria-label="Close">×</button><div id="info-content"></div></dialog>
+
+  <div id="game-overlay" class="game-overlay" hidden>
+    <div class="game-shell">
+      <header class="game-header">
+        <button id="game-back" class="button ghost compact" type="button">← Mission map</button>
+        <div id="game-title" class="game-title"></div>
+        <div class="game-header-actions"><button id="game-help" class="icon-button" type="button" aria-label="Instructions">?</button></div>
+      </header>
+      <main id="game-stage" class="game-stage"></main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
